@@ -18,6 +18,10 @@ html, body, ul, h1, h2, h3, h4 {
   padding: 0;
 }
 
+html {
+  background-color: bisque;
+}
+
 html, body {
   display: flex;
   flex-direction: column;
@@ -103,6 +107,14 @@ header {
   padding: 20px;
   gap: 8px;
   list-style-type: none;
+}
+
+#menu-selected {
+  box-sizing: border-box;
+  padding: 12px 20px;
+  color: #FF4646;
+  background-color:rgba(255, 70, 70, 0.1);
+  border-radius: 12px;
 }
 
 #burger-container {
@@ -484,8 +496,22 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  grid-area: 8px;
+  justify-content: space-between;
+  gap: 8px;
+  text-transform: uppercase;
+  font-family: MontserratBold;
+  font-size: 12px;
+  line-height: 130%;
+  letter-spacing: 0.6px;
+}
+
+.gift-tab {
+  padding: 12px 20px;
+  border-radius: 12px;
+}
+
+#gift-tab-selected {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 #gift-cards {
