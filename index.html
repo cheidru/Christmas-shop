@@ -9,16 +9,16 @@
 <body>
   <header>
     <div id="header-container">
-      <div id="logo">
-        <img src="./assets/svg/snowflake.svg" width="21" height="24" alt="logo">
+      <a href="./index.html" id="logo">
+        <img src="./assets/svg/snowflake.svg" width="24" height="24" alt="logo">
         <div id="gifts-link">the gifts</div>
-      </div>
+      </a>
       <div id="menu-container">
         <ul id="menu">
-          <li>gifts</li>
-          <li>about</li>
-          <li>best</li>
-          <li>contacts</li>
+          <li><a href="./gifts/gifts.html#gifts">gifts</a></li>
+          <li><a href="#about">about</a></li>
+          <li><a href="#best-gifts">best</a></li>
+          <li><a href="#footer">contacts</a></li>
         </ul>
         <div id="burger-container">
           <div id="burger"></div>
@@ -31,7 +31,7 @@
       <div id="hero-container">
         <div class="caption">Merry Christmas</div>
         <h1 id="hero-header">Gift yourself<br>the magic of new possibilities</h1>
-        <button>Explore Magical Gifts</button>
+        <a href="./gifts/gifts.html#gifts"><button>Explore Magical Gifts</button></a>
         <div class="caption">and Happy New Year</div>
       </div>
     </section>
@@ -109,7 +109,7 @@
     <section id="cta">
       <div id="cta-container">
         <h2>Ready to start your journey to a better version of yourself?</h2>
-        <button>Explore Magical Gifts</button>
+        <a href="./gifts/gifts.html#gifts"><button>Explore Magical Gifts</button></a>
         <div id="cta-timer-container">
           <div class="caption">The New Year is Coming Soon...</div>
           <div id="timer-container">
@@ -137,23 +137,24 @@
       </div>
     </section>
   </main>
-  <footer>
+
+  <footer id="footer">
     <div id="footer-contacts">
-      <div class="footer-contact-card">
+      <a href="tel:+375 (29) 111-22-33" class="footer-contact-card">
         <img src="./assets/svg/santa-claus.svg" width="80" height="80" alt="santa-claus icon">
-        <div class="footer-contact-text">+375 (29) 111-22-33</div>
+        <div class="footer-contact-text" >+375 (29) 111-22-33</div>
         <h3>Call Us</h3>
-      </div>
-      <div class="footer-contact-card">
+      </a>
+      <a href="https://www.google.com/maps/place/Magic+Forest/@59.27065,15.2297674,17z/data=!3m1!4b1!4m6!3m5!1s0x465c150076d2ef3d:0xc0002e9f8c28d841!8m2!3d59.2706473!4d15.2323423!16s%2Fg%2F11y5ntf803?authuser=0&entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="footer-contact-card">
         <img src="./assets/svg/christmas-tree.svg" width="80" height="80" alt="christmas tree icon">
         <div class="footer-contact-text">Magic forest</div>
         <h3>meet us</h3>
-      </div>
-      <div class="footer-contact-card">
+      </a>
+      <a href="mailto: gifts@magic.com" target="mailto:gifts@magic.com" class="footer-contact-card">
         <img src="./assets/svg/snake.svg" width="80" height="80" alt="snake icon">
         <div class="footer-contact-text">gifts@magic.com</div>
         <h3>write us</h3>
-      </div>
+      </a>
     </div>
     <div id="footer-socials">
       <div id="social-icons">
@@ -163,7 +164,7 @@
         <img src="./assets/svg/X.svg" width="24" height="24" alt="X icon">
       </div>
       <div id="paragraph">© Copyright 2025, All Rights Reserved</div>
-      <div class="caption">Made in Rolling Scopes School</div>
+      <a href="https://rs.school/" target="_blank" class="caption">Made in Rolling Scopes School</a>
     </div>
   </footer>
 </body>

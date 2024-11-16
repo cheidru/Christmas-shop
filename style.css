@@ -20,6 +20,7 @@ html, body, ul, h1, h2, h3, h4 {
 
 html {
   background-color: bisque;
+  scroll-behavior: smooth;
 }
 
 html, body {
@@ -88,6 +89,7 @@ header {
   align-items: center;
   gap: 4.66px;
   padding: 8px 20px;
+  cursor: pointer;
 }
 
 #menu-container {
@@ -109,12 +111,23 @@ header {
   list-style-type: none;
 }
 
+a {
+  text-decoration: none;
+  color: #181C29;
+}
+
+.best-gift-card:hover,
+.footer-contact-card:hover
+{
+  transform: scale(0.95);
+}
+
 #menu-selected {
   box-sizing: border-box;
   padding: 12px 20px;
-  color: #FF4646;
   background-color:rgba(255, 70, 70, 0.1);
   border-radius: 12px;
+  color: #FF4646;
 }
 
 #burger-container {
@@ -185,6 +198,7 @@ button {
   text-transform: uppercase;
   font-family: MontserratBold;
   font-size: 12px;
+  cursor: pointer;
 }
 
 #about {
@@ -332,6 +346,8 @@ button {
   border-radius: 20px;
   background-color: #FFFFFF;
   overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.5s;
 }
 
 .best-gift-card img {
@@ -436,6 +452,8 @@ footer {
   border-radius: 20px;
   color: #181C29;
   background-color: #ECF3F8;
+  cursor: pointer;
+  transition: transform 0.5s;
 }
 
 .footer-contact-text {

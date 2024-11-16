@@ -10,16 +10,16 @@
 <body>
   <header>
     <div id="header-container">
-      <div id="logo">
-        <img src="../assets/svg/snowflake.svg" width="21" height="24" alt="logo">
-        <div id="gifts-link">the gifts</div>
-      </div>
+        <a href="../index.html" id="logo">
+          <img src="../assets/svg/snowflake.svg" width="24" height="24" alt="logo">
+          <div id="gifts-link">the gifts</div>
+        </a>
       <div id="menu-container">
         <ul id="menu">
           <li id="menu-selected">gifts</li>
-          <li>about</li>
-          <li>best</li>
-          <li>contacts</li>
+          <li><a href="../index.html#about">about</a></li>
+          <li><a href="../index.html#best-gifts">best</a></li>
+          <li><a href="#footer">contacts</a></li>
         </ul>
       </div>
     </div>
@@ -123,24 +123,25 @@
     </div>
   </section>
 
-  <footer>
+  <footer id="footer">
     <div id="footer-contacts">
-      <div class="footer-contact-card">
-        <img src="../assets/svg/santa-claus.svg" width="80" height="80" alt="santa-claus icon">
-        <div class="footer-contact-text">+375 (29) 111-22-33</div>
-        <h3>Call Us</h3>
+      <div id="footer-contacts">
+        <a href="tel:+375 (29) 111-22-33" class="footer-contact-card">
+          <img src="./assets/svg/santa-claus.svg" width="80" height="80" alt="santa-claus icon">
+          <div class="footer-contact-text" >+375 (29) 111-22-33</div>
+          <h3>Call Us</h3>
+        </a>
+        <a href="https://www.google.com/maps/place/Magic+Forest/@59.27065,15.2297674,17z/data=!3m1!4b1!4m6!3m5!1s0x465c150076d2ef3d:0xc0002e9f8c28d841!8m2!3d59.2706473!4d15.2323423!16s%2Fg%2F11y5ntf803?authuser=0&entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="footer-contact-card">
+          <img src="./assets/svg/christmas-tree.svg" width="80" height="80" alt="christmas tree icon">
+          <div class="footer-contact-text">Magic forest</div>
+          <h3>meet us</h3>
+        </a>
+        <a href="mailto: gifts@magic.com" target="mailto:gifts@magic.com" class="footer-contact-card">
+          <img src="./assets/svg/snake.svg" width="80" height="80" alt="snake icon">
+          <div class="footer-contact-text">gifts@magic.com</div>
+          <h3>write us</h3>
+        </a>
       </div>
-      <div class="footer-contact-card">
-        <img src="../assets/svg/christmas-tree.svg" width="80" height="80" alt="christmas tree icon">
-        <div class="footer-contact-text">Magic forest</div>
-        <h3>meet us</h3>
-      </div>
-      <div class="footer-contact-card">
-        <img src="../assets/svg/snake.svg" width="80" height="80" alt="snake icon">
-        <div class="footer-contact-text">gifts@magic.com</div>
-        <h3>write us</h3>
-      </div>
-    </div>
     <div id="footer-socials">
       <div id="social-icons">
         <img src="../assets/svg/telegram.svg" width="24" height="24" alt="telegram icon">
@@ -149,7 +150,7 @@
         <img src="../assets/svg/X.svg" width="24" height="24" alt="X icon">
       </div>
       <div id="paragraph">© Copyright 2025, All Rights Reserved</div>
-      <div class="caption">Made in Rolling Scopes School</div>
+      <a href="https://rs.school/" target="_blank" class="caption">Made in Rolling Scopes School</a>
     </div>
   </footer>
 </body>
