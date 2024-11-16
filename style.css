@@ -1,16 +1,16 @@
 @font-face {
   font-family: "MontserratBold";
-  src: url(./src/assets/fonts/Montserrat-SemiBold.ttf);
+  src: url(./assets/fonts/Montserrat-SemiBold.ttf);
 }
 
 @font-face {
   font-family: "Montserrat";
-  src: url(./src/assets/fonts/Montserrat-Regular.ttf);
+  src: url(./assets/fonts/Montserrat-Regular.ttf);
 }
 
 @font-face {
   font-family: "Allura";
-  src: url(./src/assets/fonts/Allura-Regular.ttf);
+  src: url(./assets/fonts/Allura-Regular.ttf);
 }
 
 html, body, ul, h1, h2, h3, h4 {
@@ -146,7 +146,7 @@ section, footer {
 
 #hero {
   height: 524px;
-  background-image: url(./src/assets/img/hero-section.png);
+  background-image: url(./assets/img/hero-section.png);
 }
 
 #hero-container {
@@ -189,7 +189,7 @@ button {
 
 #about {
   height: 648px;
-  background-image: url(./src/assets/img/about-section.png);
+  background-image: url(./assets/img/about-section.png);
 }
 
 #about-container {
@@ -238,7 +238,7 @@ button {
   height: 488px;
   flex-direction: column;
   align-items: center;
-  background-image: url(./src/assets/img/slider-section.png);
+  background-image: url(./assets/img/slider-section.png);
 }
 
 #slider-container {
@@ -295,11 +295,11 @@ button {
 }
 
 #left-btn {
-  background-image: url(./src/assets/svg/left-button.svg);
+  background-image: url(./assets/svg/left-button.svg);
 }
 
 #right-btn {
-  background-image: url(./src/assets/svg/right-button.svg);
+  background-image: url(./assets/svg/right-button.svg);
 }
 
 #best-gifts {
@@ -307,7 +307,7 @@ button {
   height: 554px;
   gap: 20px;
   color: #FFFFFF;
-  background-image: url(./src/assets/img/best-gifts-section.png);
+  background-image: url(./assets/img/best-gifts-section.png);
 }
 
 #best-gifts-caption-container {
@@ -362,7 +362,7 @@ button {
 
 #cta {
   height: 668px;
-  background-image: url(./src/assets/img/CTA-sectoin.png);
+  background-image: url(./assets/img/CTA-sectoin.png);
 }
 
 #cta-container {
@@ -477,7 +477,7 @@ footer {
   gap: 20px;
   padding: 60px 82px;
   color: #FFFFFF;
-  background-image: url(./src/assets/svg/bg-garland.svg);
+  background-image: url(./assets/svg/bg-garland.svg);
   background-position: top;
   background-repeat: no-repeat;
   background-color: #FF4646;
