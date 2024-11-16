@@ -13,7 +13,7 @@
   src: url(./src/assets/fonts/Allura-Regular.ttf);
 }
 
-html, body, ul, h1, h2 {
+html, body, ul, h1, h2, h3, h4 {
   margin: 0;
   padding: 0;
 }
@@ -24,10 +24,27 @@ html, body {
   align-items: center;
 }
 
-h2 {
+h2, h3, h4 {
   vertical-align: top;
   text-transform: uppercase;
   font-family: MontserratBold;
+}
+
+h2 {
+  line-height: 152%;
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: 4px;
+}
+
+h3 {
+  line-height: 152%;
+  font-size: 16px;
+  letter-spacing: 1.3px;
+}
+
+h4 {
+  font-size: 12px;
 }
 
 body {
@@ -63,20 +80,42 @@ header {
 }
 
 #menu-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#menu {
-  width: fit-content;
+  width: 376px;
   display: flex;
   flex-direction: row;
+  align-items: center;
+}
+
+#menu {  
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
   gap: 8px;
   list-style-type: none;
 }
 
-section {
+#burger-container {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+#burger {
+  width: 20px;
+  height: 8px;
+  border-top: 1.5px solid #181C29;
+  border-bottom: 1.5px solid #181C29;
+}
+
+section, footer {
   box-sizing: border-box;
   width: 1440px;
   display: flex;
@@ -107,6 +146,7 @@ section {
 .caption {
   line-height: 100%;
   vertical-align: top;
+  text-align: center;
   font-family: Allura;
   font-size: 24px;
   letter-spacing: 1.2px;
@@ -122,7 +162,7 @@ section {
   letter-spacing: 5px;
 }
 
-#hero button {
+button {
   width: 235px;
   height: 56px;
   display: flex;
@@ -131,7 +171,7 @@ section {
   padding: 32px 20px;
   color: #FFFFFF;
   border: none;
-  background-color: black;
+  background-color: #181C29;
   border-radius: 20px;
   text-transform: uppercase;
   font-family: MontserratBold;
@@ -170,12 +210,10 @@ section {
 }
 
 #about-text-header {
-  line-height: 152%;
-  font-size: 24px;
-  letter-spacing: 4px;
+  text-align: left;
 }
 
-#about-text-paragraph {
+.paragraph {
   line-height: 148%;
   font-family: Montserrat;
   font-size: 16px;
@@ -296,11 +334,125 @@ section {
   height: 342px;
   display: flex;
   flex-direction: column;
+  gap: 8px;
   padding: 20px;
-  color: black;
+  color: #181C29;
 }
 
-#CTA {
+.txt-blue {
+  color: #4361FF;
+}
+
+.txt-green {
+  color: #06A44F;
+}
+
+.txt-purple {
+  color: #FF43F7;
+}
+
+#cta {
   height: 668px;
   background-image: url(./src/assets/img/CTA-sectoin.png);
+}
+
+#cta-container {
+  box-sizing: border-box;
+  width: 426px;
+  height: 428px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: #FFFFFF;
+  padding: 60px 0;
+}
+
+#cta-timer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#timer-container {
+  width: 344px;
+  height: 72px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+
+}
+
+.cta-timer-unit-block {
+  width: 80px;
+  height: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-timer-separator {
+  width: 1px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.4);;
+}
+
+footer {
+  height: 496px;
+  flex-direction: column;
+  gap: 60px;
+  padding: 60px 82px;
+  background-color: #FFFFFF;
+}
+
+#footer-contacts {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.footer-contact-card {
+  box-sizing: border-box;
+  width: 417px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  border-radius: 20px;
+  color: #181C29;
+  background-color: #ECF3F8;
+}
+
+.footer-contact-text {
+  line-height: 152%;
+  vertical-align: top;
+  text-align: center;
+  font-family: MontserratBold;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+#footer-socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+#social-icons {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;  
+  gap: 28px;
+  padding: 8px;
 }
