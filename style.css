@@ -24,10 +24,17 @@ html, body {
   align-items: center;
 }
 
-h2, h3, h4 {
+h1, h2, h3, h4 {
   vertical-align: top;
   text-transform: uppercase;
   font-family: MontserratBold;
+}
+
+h1 {
+  line-height: 150%;
+  text-align: center;
+  font-size: 32px;
+  letter-spacing: 6px;
 }
 
 h2 {
@@ -150,16 +157,6 @@ section, footer {
   font-family: Allura;
   font-size: 24px;
   letter-spacing: 1.2px;
-}
-
-#hero-header {
-  padding: 0;
-  vertical-align: top;
-  text-align: center;
-  font-family: MontserratBold;
-  font-size: 32px;
-  text-transform: uppercase;
-  letter-spacing: 5px;
 }
 
 button {
@@ -455,4 +452,45 @@ footer {
   justify-content: center;  
   gap: 28px;
   padding: 8px;
+}
+
+#gifts {
+  box-sizing: border-box;
+  width: 100%;
+  height: 1394px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 60px 82px;
+  color: #FFFFFF;
+  background-image: url(./src/assets/svg/bg-garland.svg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-color: #FF4646;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#gifts-header {
+  width: 426px;
+  height: 144px;
+}
+
+#gift-tabs {
+  width: 474px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  grid-area: 8px;
+}
+
+#gift-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 12px;
 }
