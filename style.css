@@ -78,25 +78,27 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  line-height: 130%;
   text-transform: uppercase;
   font-family: MontserratBold;
   font-size: 12px;
+  letter-spacing: 0.5px;
 }
 
 #logo {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 4.66px;
+  gap: 8px;
   padding: 8px 20px;
   cursor: pointer;
 }
 
 #menu-container {
-  width: 376px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 1px;
 }
 
 #menu {  
@@ -106,9 +108,31 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
-  gap: 8px;
+  gap: 7px;
   list-style-type: none;
+}
+
+.menu-item-container {
+  box-sizing: border-box;
+  padding: 12px 20px;
+  border-radius: 12px;
+  color: #181C29;
+  transition: all 0.5s;
+}
+
+#menu-item-container-active {
+  box-sizing: border-box;
+  padding: 12px 20px;
+  border-radius: 12px;
+}
+
+
+.menu-item-container:hover,
+#menu-item-container-active
+{
+  border-radius: 12px;
+  background-color:rgba(255, 70, 70, 0.1);
+  color: #FF4646;
 }
 
 a {
@@ -116,18 +140,17 @@ a {
   color: #181C29;
 }
 
+.best-gift-card,
+.footer-contact-card
+{
+  transition: all 0.5s;
+}
+
+
 .best-gift-card:hover,
 .footer-contact-card:hover
 {
   transform: scale(0.95);
-}
-
-#menu-selected {
-  box-sizing: border-box;
-  padding: 12px 20px;
-  background-color:rgba(255, 70, 70, 0.1);
-  border-radius: 12px;
-  color: #FF4646;
 }
 
 #burger-container {
@@ -138,6 +161,8 @@ a {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  cursor: pointer;
+  margin-right: 4px;
 }
 
 #burger {
@@ -199,6 +224,12 @@ button {
   font-family: MontserratBold;
   font-size: 12px;
   cursor: pointer;
+  transition: all 0.5s;
+}
+
+button:hover {
+  color: #181C29;
+  background-color: #FFFFFF;
 }
 
 #about {
@@ -310,10 +341,22 @@ button {
 
 #left-btn {
   background-image: url(./assets/svg/left-button.svg);
+  transition: all 0.5s;
 }
 
 #right-btn {
   background-image: url(./assets/svg/right-button.svg);
+  transition: all 0.5s;
+}
+
+.right-button,
+.left-button {
+  transition: all 0.5s;
+}
+
+.right-button:hover {
+  fill: #FFFFFF;
+  stroke: #FF4646;
 }
 
 #best-gifts {
@@ -350,18 +393,30 @@ button {
   transition: transform 0.5s;
 }
 
-.best-gift-card img {
+.gift-card-img-container {
+  width: 310px;
+  height: 230px;
   background-color: #ECF3F8;
 }
 
 .best-gift-card-descr {
+  box-sizing: border-box;
   width: 310px;
-  height: 342px;
+  height: 112px;
   display: flex;
   flex-direction: column;
   gap: 8px;
   padding: 20px;
   color: #181C29;
+}
+
+.best-gift-card-descr-text {
+  transition: all 0.5s;
+}
+
+
+.best-gift-card:hover .best-gift-card-descr-text {
+  color: #FF4646;
 }
 
 .txt-blue {
@@ -440,6 +495,16 @@ footer {
   gap: 12px;
 }
 
+#footer-contacts a div,
+#footer-contacts a h3 {
+  transition: all 0.5s;
+}
+
+#footer-contacts a:hover div,
+#footer-contacts a:hover h3 {
+  color: #FF4646;
+}
+
 .footer-contact-card {
   box-sizing: border-box;
   width: 417px;
@@ -484,6 +549,29 @@ footer {
   padding: 8px;
 }
 
+.social-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.social,
+#footer-socials .caption {
+  transition: all 0.5s;
+}
+
+
+.social:hover {
+  filter: invert(36%) sepia(92%) saturate(1265%) hue-rotate(334deg) brightness(96%) contrast(108%)
+}
+
+#footer-socials .caption:hover {
+  color: #FF4646;
+}
+
 #gifts {
   box-sizing: border-box;
   width: 100%;
@@ -526,8 +614,10 @@ footer {
 .gift-tab {
   padding: 12px 20px;
   border-radius: 12px;
+  transition: all 0.5s;
 }
 
+.gift-tab:hover,
 #gift-tab-selected {
   background-color: rgba(255, 255, 255, 0.2);
 }
