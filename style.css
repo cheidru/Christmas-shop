@@ -39,7 +39,7 @@ h1 {
   line-height: 150%;
   text-align: center;
   font-size: 32px;
-  letter-spacing: 6px;
+  letter-spacing: 5.6px;
 }
 
 h2 {
@@ -56,7 +56,9 @@ h3 {
 }
 
 h4 {
+  line-height: 130%;
   font-size: 12px;
+  letter-spacing: 0.6px;
 }
 
 body {
@@ -108,7 +110,7 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 7px;
+  gap: 8px;
   list-style-type: none;
 }
 
@@ -210,19 +212,22 @@ section, footer {
 }
 
 button {
+  box-sizing: border-box;
   width: 235px;
   height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 32px 20px;
+  padding: 20px 32px;
   color: #FFFFFF;
   border: none;
   background-color: #181C29;
   border-radius: 20px;
+  line-height: 130%;
   text-transform: uppercase;
   font-family: MontserratBold;
   font-size: 12px;
+  letter-spacing: 0.5px;
   cursor: pointer;
   transition: all 0.5s;
 }
@@ -250,7 +255,7 @@ button:hover {
 #about-text-container {
   box-sizing: border-box;
   height: 100%;
-  width: 658px;
+  width: 638px;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -484,7 +489,7 @@ button:hover {
 footer {
   height: 496px;
   flex-direction: column;
-  gap: 60px;
+  gap: 56px;
   padding: 60px 82px;
   background-color: #FFFFFF;
 }
@@ -528,10 +533,12 @@ footer {
   font-family: MontserratBold;
   font-size: 24px;
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 3.8px;
 }
 
 #footer-socials {
+  box-sizing: border-box;
+  height: 112px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -545,8 +552,7 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: center;  
-  gap: 28px;
-  padding: 8px;
+  gap: 12px;
 }
 
 .social-icon-container {
