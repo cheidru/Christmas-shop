@@ -149,11 +149,11 @@ a {
 }
 
 
-.best-gift-card:hover,
+/* .best-gift-card:hover,
 .footer-contact-card:hover
 {
   transform: scale(0.95);
-}
+} */
 
 #burger-container {
   width: 40px;
