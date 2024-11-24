@@ -688,7 +688,7 @@ footer {
 
   #slider-row {
     min-width: 100%;
-    width: 100%;
+    width: fit-content;
     align-self: baseline;
     overflow: hidden;
   }
@@ -796,11 +796,6 @@ footer {
     width: 100%;
     background-position: center;    
   }
-
-  #slider-row {
-    width: fit-content; 
-  }
-
   
   #gifts-header {
     width: 100%;
