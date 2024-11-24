@@ -13,24 +13,30 @@
   src: url(./assets/fonts/Allura-Regular.ttf);
 }
 
-html, body, ul, h1, h2, h3, h4 {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-  background-color: #FFFFFF;
   scroll-behavior: smooth;
 }
 
 body {
-  min-width: 1440px;
+  background-color: #FFFFFF;
+  user-select: none;
+}
+
+#content-wrapper {
+  width: 100%;
+  max-width: 1440px;
   height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #FFFFFF;
+  margin: 0 auto;
 }
 
 h1, h2, h3, h4 {
@@ -150,23 +156,15 @@ a {
   transition: all 0.5s;
 }
 
-
-/* .best-gift-card:hover,
-.footer-contact-card:hover
-{
-  transform: scale(0.95);
-} */
-
 #burger-container {
+  display: none;
   width: 40px;
   height: 40px;
-  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 8px;
   cursor: pointer;
-  margin-right: 4px;
 }
 
 #burger {
@@ -281,9 +279,10 @@ button:hover {
 }
 
 #about-image {
-  box-sizing: border-box;
+  width: 638px;
+  height: 528px;
+  background-image: url(./assets/img/about-image.png);
   border-radius: 20px;
-  overflow: hidden;
 }
 
 #slider {
@@ -330,7 +329,7 @@ button:hover {
 
 #slider-row img {
   border-radius: 20px;
-  overflow: hidden;
+  overflow: clip;
 }
 
 #slider-button-container {
@@ -385,6 +384,7 @@ button:hover {
 #best-gifts-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 12px;
@@ -499,6 +499,7 @@ footer {
 #footer-contacts {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 12px;
 }
 
@@ -635,4 +636,222 @@ footer {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 12px;
+}
+
+@media (max-width: 1459px) {  
+  #content-wrapper {
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #FF4646;
+  }
+
+
+  main, body, header, section, footer, #gifts {
+    box-sizing: border-box;
+    width: 100%;
+   }
+   
+  #gifts {
+    height: fit-content;
+    background-size: 101%;    
+  }
+
+   #hero, #about, #slider, #best-gifts, #cta {
+    background-position: center;
+  }
+
+  #about-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0;
+  height: 528px;
+  }
+  
+  #about-text-container {
+    padding: 108px 60px;
+  }
+  
+  #about-image {
+    min-width: 376px;
+    background-position: center;
+  }  
+
+  #slider-row {
+    min-width: 100%;
+    width: fit-content;
+    align-self: baseline;
+    overflow: hidden;
+  }
+
+  #best-gifts, #best-gifts-container {
+    height: fit-content;
+  }
+  
+  footer {
+    height: fit-content;
+    padding: 60px 8px;
+  }
+
+  #footer-contacts {
+    justify-content: center;
+  }   
+}
+
+@media (max-width: 1290px) {  
+  #slider-container {
+    width: 100%;
+    padding: 0;
+  }
+
+  #gifts, #gift-cards {
+    height: fit-content;
+  }
+
+  #gift-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 980px) {
+  #gift-cards {
+    grid-template-columns: 1fr 1fr ;
+  }
+}
+
+@media (max-width: 890px) {  
+  .footer-contact-card {
+    width: 100%;
+  }
+  
+  header {
+    box-sizing: border-box;
+    padding: 0 8px;
+  }
+
+  #menu {
+    display: none;
+  }
+
+  #burger-container {
+    display: flex;
+  }
+
+  #hero {
+    background-image: url(./assets/img/bg-ball.png);
+    background-size: 1250px auto; 
+    background-repeat: no-repeat;
+  }
+
+  #slider-row {
+    scroll-snap-type: x mandatory;
+  }
+
+  .slider-elem {
+    scroll-snap-align: start;
+  }
+
+  #gifts {
+    padding: 60px 8px;
+  }
+}
+
+@media (max-width: 650px) {
+  section {
+    height: fit-content;
+  }
+
+  #hero, #about {
+    height: fit-content;
+  }
+
+  #about-container {
+    height: fit-content;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0;
+    padding: 0;
+    }
+
+  #about-text-container {
+    width: 100%;
+    padding: 60px 20px;
+  }
+
+  #about-text-header, .paragraph {
+    width: 100%;
+  }
+     
+  #about-image {
+    min-width: 100%;
+    width: 100%;
+    background-position: center;    
+  }
+  
+  #gifts-header {
+    width: 100%;
+    height: fit-content;
+  }
+
+  
+  #gift-tabs {
+    width: 100%;
+    gap: 0;
+    padding: 0 5px;
+  }
+  
+  .gift-tab {
+    padding: 12px 8px;
+  }
+
+  #gift-cards {
+    grid-template-columns: 1fr ;
+  }
+}
+
+
+@media (max-width: 380px) {
+  #hero {
+    background-image: url(./assets/img/bg-ball.png);
+    background-size: 1355px auto;
+    background-position-y: 4px;
+  }
+
+  #cta {
+    height: fit-content;
+    padding: 120px 0;
+    background-size: 400%;
+    background-position-y: -1px;
+  }
+
+  #cta-container {
+    height: fit-content;
+  }
+
+  #cta-container h2 {
+    letter-spacing: 3.8px;
+  }
+
+  #timer-container {
+    margin-left: 3px;
+    margin-top: -4px;
+  }
+
+  footer {
+    height: fit-content;
+    margin-top: 3px;  
+  }
+
+  #footer-socials {
+    margin-top: 2px;
+  }
 }
