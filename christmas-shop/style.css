@@ -13,25 +13,30 @@
   src: url(./assets/fonts/Allura-Regular.ttf);
 }
 
-html, body, ul, h1, h2, h3, h4 {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-  background-color: #FFFFFF;
   scroll-behavior: smooth;
 }
 
 body {
-  min-width: 1440px;
+  background-color: #FFFFFF;
+  user-select: none;
+}
+
+#content-wrapper {
+  width: 100%;
+  max-width: 1440px;
   height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #FFFFFF;
-  user-select: none;
+  margin: 0 auto;
 }
 
 h1, h2, h3, h4 {
@@ -324,7 +329,7 @@ button:hover {
 
 #slider-row img {
   border-radius: 20px;
-  overflow: hidden;
+  overflow: clip;
 }
 
 #slider-button-container {
@@ -634,12 +639,10 @@ footer {
 }
 
 @media (max-width: 1459px) {  
-  body {
+  #content-wrapper {
     box-sizing: border-box;
-    min-width: 100vw;
-    width: 100vw;
-    /* min-width: calc(100vw - 20px);
-    width: calc(100vw - 20px); */
+    max-width: 100%;
+    width: 100%;
   }
 
   main {
@@ -679,9 +682,10 @@ footer {
   }  
 
   #slider-row {
-    min-width: fit-content;
-    width: fit-content;
+    min-width: 100%;
+    width: 100%;
     align-self: baseline;
+    overflow: hidden;
   }
 
   #best-gifts, #best-gifts-container {
@@ -701,7 +705,7 @@ footer {
 @media (max-width: 1276px) {  
   #slider-container {
     width: 100%;
-    padding: 0 8px;
+    padding: 0;
   }
 }
 
@@ -725,14 +729,23 @@ footer {
 
   #hero {
     background-image: url(./assets/img/bg-ball.png);
-    background-size: 1250px auto;
+    background-size: 1250px auto; 
     background-repeat: no-repeat;
+  }
+
+  #slider-row {
+    scroll-snap-type: x mandatory;
+  }
+
+  .slider-elem {
+    scroll-snap-align: start;
   }
 }
 
 @media (max-width: 650px) {
-  bosy {
-    justify-content: center;
+
+  section {
+    height: fit-content;
   }
 
   #hero, #about {
@@ -760,24 +773,48 @@ footer {
     min-width: 100%;
     width: 100%;
     background-position: center;    
-  }  
+  }
+
+  #slider-row {
+    width: fit-content; 
+  }
 }
 
 
 @media (max-width: 380px) {
+
   #hero {
     background-image: url(./assets/img/bg-ball.png);
-    background-size: 1350px auto;
-    background-position-y: 5px;
+    background-size: 1355px auto;
+    background-position-y: 4px;
   }
 
   #cta {
-    background-image: url(./assets/img/bg-forest.png);
-    background-position-y: 35px;
+    height: fit-content;
+    padding: 120px 0;
+    background-size: 400%;
+    background-position-y: -1px;
+  }
+
+  #cta-container {
+    height: fit-content;
   }
 
   #cta-container h2 {
     letter-spacing: 3.8px;
   }
-  
+
+  #timer-container {
+    margin-left: 3px;
+    margin-top: -4px;
+  }
+
+  footer {
+    height: fit-content;
+    margin-top: 3px;  
+  }
+
+  #footer-socials {
+    margin-top: 2px;
+  }
 }
