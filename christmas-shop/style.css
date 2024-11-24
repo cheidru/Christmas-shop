@@ -659,8 +659,13 @@ footer {
     box-sizing: border-box;
     width: 100%;
    }
+   
+  #gifts {
+    height: fit-content;
+    background-size: 101%;    
+  }
 
-   #hero, #about, #slider, #gifts, #best-gifts, #cta {
+   #hero, #about, #slider, #best-gifts, #cta {
     background-position: center;
   }
 
@@ -702,10 +707,24 @@ footer {
   }   
 }
 
-@media (max-width: 1276px) {  
+@media (max-width: 1290px) {  
   #slider-container {
     width: 100%;
     padding: 0;
+  }
+
+  #gifts, #gift-cards {
+    height: fit-content;
+  }
+
+  #gift-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 980px) {
+  #gift-cards {
+    grid-template-columns: 1fr 1fr ;
   }
 }
 
@@ -740,10 +759,13 @@ footer {
   .slider-elem {
     scroll-snap-align: start;
   }
+
+  #gifts {
+    padding: 60px 8px;
+  }
 }
 
 @media (max-width: 650px) {
-
   section {
     height: fit-content;
   }
@@ -778,11 +800,31 @@ footer {
   #slider-row {
     width: fit-content; 
   }
+
+  
+  #gifts-header {
+    width: 100%;
+    height: fit-content;
+  }
+
+  
+  #gift-tabs {
+    width: 100%;
+    gap: 0;
+    padding: 0 5px;
+  }
+  
+  .gift-tab {
+    padding: 12px 8px;
+  }
+
+  #gift-cards {
+    grid-template-columns: 1fr ;
+  }
 }
 
 
 @media (max-width: 380px) {
-
   #hero {
     background-image: url(./assets/img/bg-ball.png);
     background-size: 1355px auto;
