@@ -757,15 +757,10 @@ footer {
   #hero {
     background-image: url(./assets/img/hero-section.png), url(./assets/img/bg-ball.png); 
   }
-  
+
   #slider {
     background-image: url(./assets/img/slider-section768.png);
   }
-/* 
-  #slider {
-    background-size: 1200px auto; 
-    background-repeat: no-repeat;
-  } */
 
   #slider-row {
     scroll-snap-type: x mandatory;
