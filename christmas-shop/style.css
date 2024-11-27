@@ -136,8 +136,6 @@ header {
   border-radius: 12px;
 }
 
-
-.menu-item-container:hover,
 #menu-item-container-active
 {
   border-radius: 12px;
@@ -230,11 +228,6 @@ button {
   letter-spacing: 0.5px;
   cursor: pointer;
   transition: all 0.5s;
-}
-
-button:hover {
-  color: #181C29;
-  background-color: #FFFFFF;
 }
 
 #about {
@@ -360,11 +353,6 @@ button:hover {
   transition: all 0.5s;
 }
 
-.right-button:hover {
-  fill: #FFFFFF;
-  stroke: #FF4646;
-}
-
 #best-gifts {
   flex-direction: column;
   height: 554px;
@@ -395,15 +383,15 @@ button:hover {
   height: 342px;
   border-radius: 20px;
   background-color: #FFFFFF;
+  background-color: #ECF3F8;
   overflow: hidden;
-  cursor: pointer;
+  cursor: pointer;  
   transition: transform 0.5s;
 }
 
 .gift-card-img-container {
   width: 310px;
   height: 230px;
-  background-color: #ECF3F8;
 }
 
 .best-gift-card-descr {
@@ -414,16 +402,13 @@ button:hover {
   flex-direction: column;
   gap: 8px;
   padding: 20px;
+  border-radius: 20px;
   color: #181C29;
+  background-color: #FFFFFF;
 }
 
 .best-gift-card-descr-text {
   transition: all 0.5s;
-}
-
-
-.best-gift-card:hover .best-gift-card-descr-text {
-  color: #FF4646;
 }
 
 .txt-blue {
@@ -508,10 +493,6 @@ footer {
   transition: all 0.5s;
 }
 
-#footer-contacts a:hover div,
-#footer-contacts a:hover h3 {
-  color: #FF4646;
-}
 
 .footer-contact-card {
   box-sizing: border-box;
@@ -572,15 +553,6 @@ footer {
   transition: all 0.5s;
 }
 
-
-.social:hover {
-  filter: invert(36%) sepia(92%) saturate(1265%) hue-rotate(334deg) brightness(96%) contrast(108%)
-}
-
-#footer-socials .caption:hover {
-  color: #FF4646;
-}
-
 #gifts {
   box-sizing: border-box;
   width: 1440px;
@@ -626,7 +598,6 @@ footer {
   transition: all 0.5s;
 }
 
-.gift-tab:hover,
 #gift-tab-selected {
   background-color: rgba(255, 255, 255, 0.2);
 }
@@ -636,6 +607,46 @@ footer {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 12px;
+}
+
+@media (hover:hover) {
+  .menu-item-container:hover
+  {
+    border-radius: 12px;
+    background-color:rgba(255, 70, 70, 0.1);
+    color: #FF4646;
+  }
+  
+  button:hover {
+    color: #181C29;
+    background-color: #FFFFFF;
+  }
+  
+  .right-button:hover {
+    fill: #FFFFFF;
+    stroke: #FF4646;
+  }
+
+  .best-gift-card:hover .best-gift-card-descr-text {
+    color: #FF4646;
+  }
+
+  #footer-contacts a:hover div,
+  #footer-contacts a:hover h3 {
+    color: #FF4646;
+  }
+  
+  .social:hover {
+    filter: invert(36%) sepia(92%) saturate(1265%) hue-rotate(334deg) brightness(96%) contrast(108%)
+  }
+
+  #footer-socials .caption:hover {
+    color: #FF4646;
+  }
+
+  .gift-tab:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
 }
 
 @media (max-width: 1459px) {  
@@ -738,19 +749,23 @@ footer {
     padding: 0 8px;
   }
 
-  #menu {
-    display: none;
-  }
-
-  #burger-container {
-    display: flex;
-  }
-
-  #hero {
-    background-image: url(./assets/img/bg-ball.png);
+  #hero, #best-gifts {
     background-size: 1250px auto; 
     background-repeat: no-repeat;
   }
+
+  #hero {
+    background-image: url(./assets/img/hero-section.png), url(./assets/img/bg-ball.png); 
+  }
+  
+  #slider {
+    background-image: url(./assets/img/slider-section768.png);
+  }
+/* 
+  #slider {
+    background-size: 1200px auto; 
+    background-repeat: no-repeat;
+  } */
 
   #slider-row {
     scroll-snap-type: x mandatory;
@@ -762,6 +777,16 @@ footer {
 
   #gifts {
     padding: 60px 8px;
+  }
+}
+
+@media (max-width: 768px) {  
+  #menu {
+    display: none;
+  }
+
+  #burger-container {
+    display: flex;
   }
 }
 
