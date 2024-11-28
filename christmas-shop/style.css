@@ -39,6 +39,16 @@ body {
   margin: 0 auto;
 }
 
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #FF4646;
+}
+
 h1, h2, h3, h4 {
   vertical-align: top;
   text-transform: uppercase;
@@ -184,7 +194,11 @@ section, footer {
 
 #hero {
   height: 524px;
-  background-image: url(./assets/img/hero-section.png);
+  background-image: url(./assets/img/bg-ball.png), url(./assets/img/bg-snow.png);
+  background-size: 1430px auto;
+  background-position-y: -35px;
+  background-position-x: 6px;
+  background-color: #FF4646;
 }
 
 #hero-container {
@@ -232,7 +246,10 @@ button {
 
 #about {
   height: 648px;
-  background-image: url(./assets/img/about-section.png);
+  background-image: url(./assets/img/bg-snow.png);
+  background-size: 1550px auto;
+  background-position-x: -55px;
+  background-color: #FF4646;
 }
 
 #about-container {
@@ -282,7 +299,11 @@ button {
   height: 488px;
   flex-direction: column;
   align-items: center;
-  background-image: url(./assets/img/slider-section.png);
+  background-image: url(./assets/img/bg-snow.png);
+  background-size: 1455px auto;
+  background-position-y: -60px;
+  background-position-x: -10px;
+  background-color: #FF4646;
 }
 
 #slider-container {
@@ -358,7 +379,10 @@ button {
   height: 554px;
   gap: 20px;
   color: #FFFFFF;
-  background-image: url(./assets/img/best-gifts-section.png);
+  background-image: url(./assets/img/bg-snow.png);
+  background-size: 1440px auto;
+  background-position-y: -25px;
+  background-color: #FF4646;
 }
 
 #best-gifts-caption-container {
@@ -425,7 +449,9 @@ button {
 
 #cta {
   height: 668px;
-  background-image: url(./assets/img/CTA-sectoin.png);
+  background: url(./assets/img/bg-snow.png) no-repeat -80px 0 / 1600px auto,
+   url(./assets/img/bg-forest.png) no-repeat 0 0 / 1440px auto;
+  background-color: #FF4646;
 }
 
 #cta-container {
@@ -656,16 +682,6 @@ footer {
     width: 100%;
   }
 
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 20px;
-    overflow: hidden;
-    background-color: #FF4646;
-  }
-
-
   main, body, header, section, footer, #gifts {
     box-sizing: border-box;
     width: 100%;
@@ -754,12 +770,10 @@ footer {
     background-repeat: no-repeat;
   }
 
-  #hero {
-    background-image: url(./assets/img/hero-section.png), url(./assets/img/bg-ball.png); 
-  }
-
   #slider {
-    background-image: url(./assets/img/slider-section768.png);
+    background-image: url(./assets/img/bg-snow.png);
+    background-size: 1180px auto;
+    background-position-x: -210px;
   }
 
   #slider-row {
@@ -841,9 +855,13 @@ footer {
 
 @media (max-width: 380px) {
   #hero {
-    background-image: url(./assets/img/bg-ball.png);
     background-size: 1355px auto;
-    background-position-y: 4px;
+    background-position-y: -1px;
+  }
+
+  #slider {
+    background-size: 1180px auto;
+    background-position-x: -400px;
   }
 
   #cta {
