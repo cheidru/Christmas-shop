@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./style.css">
-<link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <script defer src="./script.js"></script>
   <title>Christmas Shop</title>
 </head>
 <body>
@@ -22,11 +23,22 @@
             <li><a href="#best-gifts" class="menu-item-container">best</a></li>
             <li><a href="#footer" class="menu-item-container">contacts</a></li>
           </ul>
-          <div id="burger-container">
-            <div id="burger"></div>
+          <div id="burger-btn-container">
+            <div id="burger-btn">
+              <div class="burger-btn-bar" id="burger-bar1"></div>
+              <div class="burger-btn-bar" id="burger-bar2"></div>
+            </div>
           </div>
         </nav>
       </div>
+      <nav id="burger-menu-container">
+        <ul id="burger-menu">
+          <li class="burger-menu-item"><a href="./gifts/gifts.html#gifts">gifts</a></li>
+          <li class="burger-menu-item"><a href="#about">about</a></li>
+          <li class="burger-menu-item"><a href="#best-gifts">best</a></li>
+          <li class="burger-menu-item"><a href="#footer">contacts</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
       <section id="hero">
@@ -64,6 +76,8 @@
             <img class="slider-elem" src="./assets/img/create-img.png" width="200" height="200" alt="create image">
             <div class="slider-elem">Love</div>
             <img class="slider-elem" src="./assets/img/love-img.png" width="200" height="200" alt="love image">
+            <div class="slider-elem">Dream</div>
+            <img class="slider-elem" src="./assets/img/dream-img.png" width="200" height="200" alt="dream image">
           </div>
           <div id="slider-button-container">
             <div id="left-btn">
