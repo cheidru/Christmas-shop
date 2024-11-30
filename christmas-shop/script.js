@@ -4,15 +4,20 @@ const burgerMNU = document.getElementById('burger-menu-container');
 const burgerItems = document.getElementById('burger-menu');
 
 const slider = document.getElementById('slider-row');
-const sliderLeftBTN = document.querySelector('.left-button');
-const sliderRightBTN = document.querySelector('.right-button');
+const sliderLeftBTN = document.getElementById('left-btn');
+const sliderRightBTN = document.getElementById('right-btn');
+
+const content = document.getElementById('content-wrapper');
 
 let burgerMNU_ON = false;
 let background_Locked = false;
-let sliderLeftBTN_ON = false;
-let sliderRightBTN_ON = true;
+
+sliderLeftBTN.BTN_ON = false;
+sliderRightBTN.BTN_ON = true;
 let sliderStrokes = 3;
 let sliderPosition = 0;
+let sliderWidth = 1993;
+let sliderInvisibleWidth = sliderWidth - 1440 + 16;
 
 checkWinWidth();
 
@@ -20,11 +25,24 @@ window.addEventListener('resize', checkWinWidth)
 burgerBTN.addEventListener('click', toggleBurgerMNU);
 burgerItems.addEventListener('click', toggleBurgerMNU);
 
+
+
 sliderLeftBTN.addEventListener('click', () => {
-  if(!sliderLeftBTN_ON) return;
+  if(!sliderLeftBTN.BTN_ON) return;
+  sliderPosition--;
+  console.log('нажата левая кнопка', 'sliderPosition = ', sliderPosition, 'sliderStrokes = ', sliderStrokes);
+  if(sliderPosition === 0) toggleSliderBTN(sliderLeftBTN, 'disable');
+  if(sliderPosition === sliderStrokes - 1) toggleSliderBTN(sliderRightBTN, 'enable');
+  slider.style.transform = `translateX(-${(sliderInvisibleWidth / (sliderStrokes)) * sliderPosition}px)`;
 })
+
 sliderRightBTN.addEventListener('click', () => {
-    if(!sliderRightBTN_ON) return;
+  if(!sliderRightBTN.BTN_ON) return;
+  sliderPosition++;
+  console.log('нажата правая кнопка', 'sliderPosition = ', sliderPosition, 'sliderStrokes = ', sliderStrokes);
+  if(sliderPosition === sliderStrokes) toggleSliderBTN(sliderRightBTN, 'disable');
+  if(sliderPosition === 1) toggleSliderBTN(sliderLeftBTN, 'enable');
+  slider.style.transform = `translateX(-${(sliderInvisibleWidth / (sliderStrokes)) * sliderPosition}px)`;  
 })
 
 function toggleBurgerMNU () {
@@ -35,6 +53,7 @@ function toggleBurgerMNU () {
 }
 
 function checkWinWidth () {
+  sliderInvisibleWidth = sliderWidth - content.clientWidth + 16;
   // Adjust behavior depending on screen width
   if(window.innerWidth <= 768 && !burgerMNU_ON) {
     sliderStrokes = 6;
@@ -52,6 +71,10 @@ function checkWinWidth () {
     burgerMNU.classList.remove('burger-menu-drive-in');
     console.log('window.innerWidth = ', window.innerWidth, 'checkWinWidth_foo burgerMNU_ON2 = ', burgerMNU_ON);
   }
+  toggleSliderBTN(sliderLeftBTN, 'disable');
+  toggleSliderBTN(sliderRightBTN, 'enable');
+  sliderPosition = 0;
+  slider.style.transform = `translateX(0)`
 }
 
 function toggleBackgroundLock() {
@@ -63,4 +86,15 @@ function toggleBackgroundLock() {
     document.body.style.overflow = 'unset';
     background_Locked = false;
   }
+}
+
+function toggleSliderBTN(BTN, action) {
+  console.log('toggleSliderBTN enacted');
+  if(action === 'disable') {
+    BTN.BTN_ON = false;
+    BTN.classList.remove('slider-button-active');
+  } else if (action === 'enable') {
+    BTN.BTN_ON = true;
+    BTN.classList.add('slider-button-active');
+  }  
 }
