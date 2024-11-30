@@ -25,15 +25,15 @@ let sliderStrokes = 3;
 let sliderPosition = 0;
 let sliderWidth = 1993;
 let sliderInvisibleWidth = sliderWidth - 1440 + 16;
+let giftsQTY = 36;
 
 checkWinWidth();
+showFourRandomGifts();
 setInterval(ctaTimer, 1000);
 
 window.addEventListener('resize', checkWinWidth)
 burgerBTN.addEventListener('click', toggleBurgerMNU);
 burgerItems.addEventListener('click', toggleBurgerMNU);
-
-
 
 sliderLeftBTN.addEventListener('click', () => {
   if(!sliderLeftBTN.BTN_ON) return;
@@ -114,4 +114,39 @@ function ctaTimer() {
   hours.innerText = hoursLeft;
   minutes.innerText = minutesLeft;
   seconds.innerText = secondsLeft;
+}
+
+function showFourRandomGifts() {
+  let giftSet = [];
+  do {
+    const index = Math.floor(Math.random() * (giftsQTY));
+    if(!giftSet.includes(index)) giftSet.push(index);
+  } while(giftSet.length < 4)
+
+  const cards = document.querySelectorAll('.best-gift-card');
+  for(let i = 0; i < 4; i++) {
+    let cardImage = cards[i].querySelector('img');
+    let cardCategory = cards[i].querySelector('.best-gift-card-descr-caption');
+    let cardName = cards[i].querySelector('.best-gift-card-descr-text');    
+    switch(gifts[giftSet[i]].category) {
+      case 'For Work':
+        cardImage.src = './assets/img/gift-for-work.png';
+        cardCategory.innerText = 'for work';
+        cardCategory.classList.add('txt-blue');
+        cardName.innerText = gifts[giftSet[i]].name;
+        break;
+      case 'For Health':
+        cardImage.src = './assets/img/gift-for-health.png';
+        cardCategory.innerText = 'for health';
+        cardCategory.classList.add('txt-green');
+        cardName.innerText = gifts[giftSet[i]].name;
+        break;
+      case 'For Harmony':
+        cardImage.src = './assets/img/gift-for-harmony.png';
+        cardCategory.innerText = 'for harmony';
+        cardCategory.classList.add('txt-purple');
+        cardName.innerText = gifts[giftSet[i]].name;
+        break;
+    }
+  }
 }
