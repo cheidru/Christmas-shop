@@ -1,3 +1,5 @@
+const content = document.getElementById('content-wrapper');
+
 const burgerBTN = document.getElementById('burger-btn-container');
 const burger = document.getElementById('burger-btn');
 const burgerMNU = document.getElementById('burger-menu-container');
@@ -7,7 +9,12 @@ const slider = document.getElementById('slider-row');
 const sliderLeftBTN = document.getElementById('left-btn');
 const sliderRightBTN = document.getElementById('right-btn');
 
-const content = document.getElementById('content-wrapper');
+const days = document.getElementById('cta-timer-days');
+const hours = document.getElementById('cta-timer-hours');
+const minutes = document.getElementById('cta-timer-minutes');
+const seconds = document.getElementById('cta-timer-seconds');
+
+const newYearTimeStamp = new Date(2025, 0, 1);
 
 let burgerMNU_ON = false;
 let background_Locked = false;
@@ -20,6 +27,7 @@ let sliderWidth = 1993;
 let sliderInvisibleWidth = sliderWidth - 1440 + 16;
 
 checkWinWidth();
+setInterval(ctaTimer, 1000);
 
 window.addEventListener('resize', checkWinWidth)
 burgerBTN.addEventListener('click', toggleBurgerMNU);
@@ -30,7 +38,6 @@ burgerItems.addEventListener('click', toggleBurgerMNU);
 sliderLeftBTN.addEventListener('click', () => {
   if(!sliderLeftBTN.BTN_ON) return;
   sliderPosition--;
-  console.log('нажата левая кнопка', 'sliderPosition = ', sliderPosition, 'sliderStrokes = ', sliderStrokes);
   if(sliderPosition === 0) toggleSliderBTN(sliderLeftBTN, 'disable');
   if(sliderPosition === sliderStrokes - 1) toggleSliderBTN(sliderRightBTN, 'enable');
   slider.style.transform = `translateX(-${(sliderInvisibleWidth / (sliderStrokes)) * sliderPosition}px)`;
@@ -39,7 +46,6 @@ sliderLeftBTN.addEventListener('click', () => {
 sliderRightBTN.addEventListener('click', () => {
   if(!sliderRightBTN.BTN_ON) return;
   sliderPosition++;
-  console.log('нажата правая кнопка', 'sliderPosition = ', sliderPosition, 'sliderStrokes = ', sliderStrokes);
   if(sliderPosition === sliderStrokes) toggleSliderBTN(sliderRightBTN, 'disable');
   if(sliderPosition === 1) toggleSliderBTN(sliderLeftBTN, 'enable');
   slider.style.transform = `translateX(-${(sliderInvisibleWidth / (sliderStrokes)) * sliderPosition}px)`;  
@@ -60,7 +66,6 @@ function checkWinWidth () {
     burgerMNU.style.display = 'flex';
     burger.style.display = 'flex';
     burgerMNU_ON = true;
-    console.log('window.innerWidth = ', window.innerWidth, 'checkWinWidth_foo burgerMNU_ON1 = ', burgerMNU_ON);
   } else if (window.innerWidth > 768 && burgerMNU_ON) {
     sliderStrokes = 3;
     toggleBackgroundLock();  
@@ -69,7 +74,6 @@ function checkWinWidth () {
     burgerMNU_ON = false;
     burger.classList.remove('cross-btn');
     burgerMNU.classList.remove('burger-menu-drive-in');
-    console.log('window.innerWidth = ', window.innerWidth, 'checkWinWidth_foo burgerMNU_ON2 = ', burgerMNU_ON);
   }
   toggleSliderBTN(sliderLeftBTN, 'disable');
   toggleSliderBTN(sliderRightBTN, 'enable');
@@ -89,7 +93,6 @@ function toggleBackgroundLock() {
 }
 
 function toggleSliderBTN(BTN, action) {
-  console.log('toggleSliderBTN enacted');
   if(action === 'disable') {
     BTN.BTN_ON = false;
     BTN.classList.remove('slider-button-active');
@@ -97,4 +100,18 @@ function toggleSliderBTN(BTN, action) {
     BTN.BTN_ON = true;
     BTN.classList.add('slider-button-active');
   }  
+}
+
+function ctaTimer() {
+  // new Date(year, month, date, hours, minutes, seconds, ms)
+  const timeStampNow = new Date();
+  const timeLeft = newYearTimeStamp - timeStampNow;
+  const daysLeft = Math.floor(timeLeft / ( 60 * 60 * 24 * 1000));
+  const hoursLeft = Math.floor((timeLeft % ( 60 * 60 * 24 * 1000)) / ( 60 * 60 * 1000));
+  const minutesLeft = Math.floor((timeLeft % ( 60 * 60 * 1000)) / ( 60 * 1000));
+  const secondsLeft = Math.floor((timeLeft % ( 60 * 1000)) / 1000);
+  days.innerText = daysLeft;
+  hours.innerText = hoursLeft;
+  minutes.innerText = minutesLeft;
+  seconds.innerText = secondsLeft;
 }
