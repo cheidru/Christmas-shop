@@ -29,6 +29,14 @@ body {
   user-select: none;
 }
 
+#modal {
+  display: none;
+}
+
+#overlay {
+  display: none;
+}
+
 #content-wrapper {
   width: 100%;
   max-width: 1440px;
@@ -687,19 +695,6 @@ footer {
   gap: 12px;
 }
 
-#scroll-to-top-btn {
-  box-sizing: border-box;
-  position: sticky;
-  bottom: 8px;
-  width: 100%;
-  height: 56px;
-  display: none;
-  background-image: url(./assets/img/scroll-to-to-button.png);
-  background-repeat: no-repeat;
-  background-size: 56px 56px;
-  background-position: top 0 right 8px;
-}
-
 @media (hover:hover) {
   .menu-item-container:hover
   {
@@ -875,8 +870,17 @@ footer {
     visibility: visible;
   }
 
+
   #scroll-to-top-btn {
-    display: block;
+    box-sizing: border-box;
+    position: sticky;
+    bottom: 8px;
+    width: 100%;
+    height: 56px;
+    background-image: url(./assets/img/scroll-to-to-button.png);
+    background-repeat: no-repeat;
+    background-size: 56px 56px;
+    background-position: top 0 right 8px;
   }
 }
 

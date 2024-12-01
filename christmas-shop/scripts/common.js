@@ -19,7 +19,7 @@ function toggleBurgerMNU () {
 
 function toggleBackgroundLock() {
   // Lock/unlock modal window background
-  if(!background_Locked) {
+  if(!background_Locked && windowWidth <= 768) {
     document.body.style.overflow = 'hidden';
     background_Locked = true;
   } else {

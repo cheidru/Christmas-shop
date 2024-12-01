@@ -42,9 +42,9 @@ function checkWinWidth() {
 
 function checkWinScroll() {
   if(window.scrollY <= 300) {
-    scrollToTop.style.visibility = 'hidden';
+    scrollToTop.style.display = 'none';
   } else {
-    scrollToTop.style.visibility = 'visible';
+    scrollToTop.style.display = 'block';
   }
 }
 
