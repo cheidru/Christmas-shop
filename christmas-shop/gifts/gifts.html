@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
   <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <script src="../scripts/gifts-json.js"></script>
+  <script defer src="../scripts/common.js"></script>
+  <script defer src="../scripts/gifts.js"></script>
   <title>Christmas Shop Gifts</title>
 </head>
 <body>
@@ -22,11 +25,22 @@
             <li><a href="../index.html#best-gifts" class="menu-item-container">best</a></li>
             <li><a href="#footer" class="menu-item-container">contacts</a></li>
           </ul>
-          <div id="burger-container">
-            <div id="burger"></div>
+          <div id="burger-btn-container">
+            <div id="burger-btn">
+              <div class="burger-btn-bar" id="burger-bar1"></div>
+              <div class="burger-btn-bar" id="burger-bar2"></div>
+            </div>
           </div>
         </nav>
       </div>
+      <nav id="burger-menu-container">
+        <ul id="burger-menu">
+          <li><a href="./gifts/gifts.html#gifts" class="burger-menu-item">gifts</a></li>
+          <li><a href="#about" class="burger-menu-item">about</a></li>
+          <li><a href="#best-gifts" class="burger-menu-item">best</a></li>
+          <li><a href="#footer" class="burger-menu-item">contacts</a></li>
+        </ul>
+      </nav>
     </header>
   
     <section id="gifts">
@@ -34,91 +48,91 @@
         <h1>Achieve health, harmony, and inner strength</h1>
       </div>
       <div id="gift-tabs">
-        <div id="gift-tab-selected" class="gift-tab">all</div>
+        <div id="all-tab" class="gift-tab selected">all</div>
         <div class="gift-tab">for work</div>
         <div class="gift-tab">for health</div>
         <div class="gift-tab">for harmony</div>
       </div>
       <div id="gift-cards">
         <div class="best-gift-card">
-          <div class="gift-card-img-container"><img src="../assets/img/console-log-guru.png" alt="console-log-guru image"></div>
+          <div class="gift-card-img-container"><img src="../assets/img/gift-for-work.png" alt="console-log-guru image"></div>
           <div class="best-gift-card-descr">
             <h4 class="best-gift-card-descr-caption txt-blue">For work</h4>
             <h3 class="best-gift-card-descr-text">Console.log Guru</h3>
           </div>
         </div>
         <div class="best-gift-card">
-          <div class="gift-card-img-container"><img src="../assets/img/hydration-bot.png" alt="hydration-bot image"></div>
+          <div class="gift-card-img-container"><img src="../assets/img/gift-for-health.png" alt="hydration-bot image"></div>
           <div class="best-gift-card-descr">
             <h4 class="best-gift-card-descr-caption txt-green">For health</h4>
             <h3 class="best-gift-card-descr-text">step master</h3>
           </div>
         </div>
         <div class="best-gift-card">
-          <div class="gift-card-img-container"><img src="../assets/img/console-log-guru.png" alt="console-log-guru image"></div>
+          <div class="gift-card-img-container"><img src="../assets/img/gift-for-work.png" alt="console-log-guru image"></div>
           <div class="best-gift-card-descr">
             <h4 class="best-gift-card-descr-caption txt-blue">For work</h4>
             <h3 class="best-gift-card-descr-text">bug magnet</h3>
           </div>
         </div>
         <div class="best-gift-card">
-          <div class="gift-card-img-container"><img src="../assets/img/console-log-guru.png" alt="console-log-guru image"></div>
+          <div class="gift-card-img-container"><img src="../assets/img/gift-for-work.png" alt="console-log-guru image"></div>
           <div class="best-gift-card-descr">
             <h4 class="best-gift-card-descr-caption txt-blue">For work</h4>
             <h3 class="best-gift-card-descr-text">shortcut cheater</h3>
           </div>
         </div>
         <div class="best-gift-card">
-          <div class="gift-card-img-container"><img src="../assets/img/hydration-bot.png" alt="hydration-bot image"></div>
+          <div class="gift-card-img-container"><img src="../assets/img/gift-for-health.png" alt="hydration-bot image"></div>
           <div class="best-gift-card-descr">
             <h4 class="best-gift-card-descr-caption txt-green">For health</h4>
             <h3 class="best-gift-card-descr-text">posture levitation</h3>
           </div>
         </div>
         <div class="best-gift-card">
-          <div class="gift-card-img-container"><img src="../assets/img/spontaneous-coding-philosopher.png" alt="spontaneous-coding-philosopher image"></div>
+          <div class="gift-card-img-container"><img src="../assets/img/gift-for-harmony.png" alt="spontaneous-coding-philosopher image"></div>
           <div class="best-gift-card-descr">
             <h4 class="best-gift-card-descr-caption txt-purple">For harmony</h4>
             <h3 class="best-gift-card-descr-text">bug acceptance guru</h3>
           </div>
         </div>
         <div class="best-gift-card">
-          <div class="gift-card-img-container"><img src="../assets/img/hydration-bot.png" alt="hydration-bot image"></div>
+          <div class="gift-card-img-container"><img src="../assets/img/gift-for-health.png" alt="hydration-bot image"></div>
           <div class="best-gift-card-descr">
             <h4 class="best-gift-card-descr-caption txt-green">For health</h4>
             <h3 class="best-gift-card-descr-text">snack resister</h3>
           </div>
         </div>
         <div class="best-gift-card">
-          <div class="gift-card-img-container"><img src="../assets/img/spontaneous-coding-philosopher.png" alt="spontaneous-coding-philosopher image"></div>
+          <div class="gift-card-img-container"><img src="../assets/img/gift-for-harmony.png" alt="spontaneous-coding-philosopher image"></div>
           <div class="best-gift-card-descr">
             <h4 class="best-gift-card-descr-caption txt-purple">For harmony</h4>
             <h3 class="best-gift-card-descr-text">error laugher</h3>
           </div>
         </div>
         <div class="best-gift-card">
-          <div class="gift-card-img-container"><img src="../assets/img/hydration-bot.png" alt="hydration-bot image"></div>
+          <div class="gift-card-img-container"><img src="../assets/img/gift-for-health.png" alt="hydration-bot image"></div>
           <div class="best-gift-card-descr">
             <h4 class="best-gift-card-descr-caption txt-green">For health</h4>
             <h3 class="best-gift-card-descr-text">Hydration Bot</h3>
           </div>
         </div>
         <div class="best-gift-card">
-          <div class="gift-card-img-container"><img src="../assets/img/console-log-guru.png" alt="console-log-guru image"></div>
+          <div class="gift-card-img-container"><img src="../assets/img/gift-for-work.png" alt="console-log-guru image"></div>
           <div class="best-gift-card-descr">
             <h4 class="best-gift-card-descr-caption txt-blue">For work</h4>
             <h3 class="best-gift-card-descr-text">Merge Master</h3>
           </div>
         </div>
         <div class="best-gift-card">
-          <div class="gift-card-img-container"><img src="../assets/img/spontaneous-coding-philosopher.png" alt="spontaneous-coding-philosopher image"></div>
+          <div class="gift-card-img-container"><img src="../assets/img/gift-for-harmony.png" alt="spontaneous-coding-philosopher image"></div>
           <div class="best-gift-card-descr">
             <h4 class="best-gift-card-descr-caption txt-purple">For harmony</h4>
             <h3 class="best-gift-card-descr-text">joy charger</h3>
           </div>
         </div>
         <div class="best-gift-card">
-          <div class="gift-card-img-container"><img src="../assets/img/spontaneous-coding-philosopher.png" alt="spontaneous-coding-philosopher image"></div>
+          <div class="gift-card-img-container"><img src="../assets/img/gift-for-harmony.png" alt="spontaneous-coding-philosopher image"></div>
           <div class="best-gift-card-descr">
             <h4 class="best-gift-card-descr-caption txt-purple">For harmony</h4>
             <h3 class="best-gift-card-descr-text">Spontaneous Coding Philosopher</h3>
@@ -157,5 +171,6 @@
       </div>
     </footer>
   </div>
+  <div id="scroll-to-top-btn"></div>
 </body>
 </html>
