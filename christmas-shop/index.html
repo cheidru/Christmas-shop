@@ -3,11 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./style.css">
-<link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <script src="./scripts/gifts-json.js"></script>
+  <script defer src="./scripts/common.js"></script>
+  <script defer src="./scripts/home.js"></script>
   <title>Christmas Shop</title>
 </head>
 <body>
+  <div id="modal">
+    <div id="modal-close"></div>
+    <div id="modal-img-container">
+      <img src="" alt="gift card image">
+    </div>
+    <div id="modal-descr-container">
+      <div id="modal-card-descr-container">
+        <h4 id="modal-card-descr-caption"></h4>
+        <h3 id="modal-card-descr-category"></h3>
+        <p id="modal-card-descr-text"></p>
+      </div>
+      <div id="modal-power-container">
+        <h4 id="modal-power-header"></h4>
+        <table id="modal-power-table"></table>
+      </div>
+    </div>
+  </div>
+  <div is="overlay"></div>
+
   <div id="content-wrapper">
     <header>
       <div id="header-container">
@@ -22,11 +44,22 @@
             <li><a href="#best-gifts" class="menu-item-container">best</a></li>
             <li><a href="#footer" class="menu-item-container">contacts</a></li>
           </ul>
-          <div id="burger-container">
-            <div id="burger"></div>
+          <div id="burger-btn-container">
+            <div id="burger-btn">
+              <div class="burger-btn-bar" id="burger-bar1"></div>
+              <div class="burger-btn-bar" id="burger-bar2"></div>
+            </div>
           </div>
         </nav>
       </div>
+      <nav id="burger-menu-container">
+        <ul id="burger-menu">
+          <li class="burger-menu-item"><a href="./gifts/gifts.html#gifts">gifts</a></li>
+          <li class="burger-menu-item"><a href="#about">about</a></li>
+          <li class="burger-menu-item"><a href="#best-gifts">best</a></li>
+          <li class="burger-menu-item"><a href="#footer">contacts</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
       <section id="hero">
@@ -64,16 +97,18 @@
             <img class="slider-elem" src="./assets/img/create-img.png" width="200" height="200" alt="create image">
             <div class="slider-elem">Love</div>
             <img class="slider-elem" src="./assets/img/love-img.png" width="200" height="200" alt="love image">
+            <div class="slider-elem">Dream</div>
+            <img class="slider-elem" src="./assets/img/dream-img.png" width="200" height="200" alt="dream image">
           </div>
           <div id="slider-button-container">
             <div id="left-btn">
-              <svg class="left-button" width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="white" xmlns="http://www.w3.org/2000/svg">
-              <rect x="0.5" y="0.5" width="55" height="55" rx="19.5" stroke-opacity="0.4"/>
-              <path d="M34.5 28H22M22 28L28 22M22 28L28 34" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <svg class="slider-button" width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="white" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.5" y="0.5" width="55" height="55" rx="19.5"/>
+              <path d="M34.5 28H22M22 28L28 22M22 28L28 34" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <div id="right-btn">
-              <svg class="right-button" width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="white" xmlns="http://www.w3.org/2000/svg">
+            <div id="right-btn" class="slider-button-active">
+              <svg class="slider-button" width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="white" xmlns="http://www.w3.org/2000/svg">
               <rect x="0.5" y="0.5" width="55" height="55" rx="19.5"/>
               <path d="M22 28H34.5M34.5 28L28.5 22M34.5 28L28.5 34" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
@@ -88,30 +123,30 @@
         </div>
         <div id="best-gifts-container">
           <div class="best-gift-card">
-            <div class="gift-card-img-container"><img src="./assets/img/console-log-guru.png" alt="console-log-guru image"></div>
+            <div class="gift-card-img-container"><img src="./assets/img/gift-for-work.png" alt="console-log-guru image"></div>
             <div class="best-gift-card-descr">
-              <h4 class="best-gift-card-descr-caption txt-blue">For work</h4>
+              <h4 class="best-gift-card-descr-caption">For work</h4>
               <h3 class="best-gift-card-descr-text">Console.log Guru</h3>
             </div>
           </div>
           <div class="best-gift-card">
-            <div class="gift-card-img-container"><img src="./assets/img/hydration-bot.png" alt="hydration-bot image"></div>
+            <div class="gift-card-img-container"><img src="./assets/img/gift-for-health.png" alt="hydration-bot image"></div>
             <div class="best-gift-card-descr">
-              <h4 class="best-gift-card-descr-caption txt-green">For health</h4>
+              <h4 class="best-gift-card-descr-caption">For health</h4>
               <h3 class="best-gift-card-descr-text">Hydration Bot</h3>
             </div>
           </div>
           <div class="best-gift-card">
-            <div class="gift-card-img-container"><img src="./assets/img/console-log-guru.png" alt="console-log-guru image"></div>
+            <div class="gift-card-img-container"><img src="./assets/img/gift-for-work.png" alt="console-log-guru image"></div>
             <div class="best-gift-card-descr">
-              <h4 class="best-gift-card-descr-caption txt-blue">For work</h4>
+              <h4 class="best-gift-card-descr-caption">For work</h4>
               <h3 class="best-gift-card-descr-text">Merge Master</h3>
             </div>
           </div>
           <div class="best-gift-card">
-            <div class="gift-card-img-container"><img src="./assets/img/spontaneous-coding-philosopher.png" alt="spontaneous-coding-philosopher image"></div>
+            <div class="gift-card-img-container"><img src="./assets/img/gift-for-harmony.png" alt="spontaneous-coding-philosopher image"></div>
             <div class="best-gift-card-descr">
-              <h4 class="best-gift-card-descr-caption txt-purple">For harmony</h4>
+              <h4 class="best-gift-card-descr-caption">For harmony</h4>
               <h3 class="best-gift-card-descr-text">Spontaneous Coding Philosopher</h3>
             </div>
           </div>
@@ -126,22 +161,22 @@
             <div class="caption">The New Year is Coming Soon...</div>
             <div id="timer-container">
               <div class="cta-timer-unit-block">
-                <h2>47</h2>
+                <h2 id="cta-timer-days">0</h2>
                 <h4>days</h4>
               </div>
               <div class="cta-timer-separator"></div>
               <div class="cta-timer-unit-block">
-                <h2>5</h2>
+                <h2 id="cta-timer-hours">0</h2>
                 <h4>hours</h4>
               </div>
               <div class="cta-timer-separator"></div>
               <div class="cta-timer-unit-block">
-                <h2>34</h2>
+                <h2 id="cta-timer-minutes">0</h2>
                 <h4>minutes</h4>
               </div>
               <div class="cta-timer-separator"></div>
               <div class="cta-timer-unit-block">
-                <h2>12</h2>
+                <h2 id="cta-timer-seconds">0</h2>
                 <h4>seconds</h4>
               </div>
             </div>
