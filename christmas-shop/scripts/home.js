@@ -1,30 +1,20 @@
-const content = document.getElementById('content-wrapper');
-
-const burgerBTN = document.getElementById('burger-btn-container');
-const burger = document.getElementById('burger-btn');
-const burgerMNU = document.getElementById('burger-menu-container');
-const burgerItems = document.getElementById('burger-menu');
-
 const slider = document.getElementById('slider-row');
 const sliderLeftBTN = document.getElementById('left-btn');
 const sliderRightBTN = document.getElementById('right-btn');
-
 const days = document.getElementById('cta-timer-days');
 const hours = document.getElementById('cta-timer-hours');
 const minutes = document.getElementById('cta-timer-minutes');
 const seconds = document.getElementById('cta-timer-seconds');
-
 const newYearTimeStamp = new Date(2025, 0, 1);
-
-let burgerMNU_ON = false;
-let background_Locked = false;
 
 sliderLeftBTN.BTN_ON = false;
 sliderRightBTN.BTN_ON = true;
+let windowWidth = 1440;
 let sliderStrokes = 3;
 let sliderPosition = 0;
 let sliderWidth = 1993;
-let sliderInvisibleWidth = sliderWidth - 1440 + 16;
+let sliderPadding;
+let sliderInvisibleWidth;
 let giftsQTY = 36;
 
 checkWinWidth();
@@ -32,8 +22,6 @@ showFourRandomGifts();
 setInterval(ctaTimer, 1000);
 
 window.addEventListener('resize', checkWinWidth)
-burgerBTN.addEventListener('click', toggleBurgerMNU);
-burgerItems.addEventListener('click', toggleBurgerMNU);
 
 sliderLeftBTN.addEventListener('click', () => {
   if(!sliderLeftBTN.BTN_ON) return;
@@ -51,22 +39,15 @@ sliderRightBTN.addEventListener('click', () => {
   slider.style.transform = `translateX(-${(sliderInvisibleWidth / (sliderStrokes)) * sliderPosition}px)`;  
 })
 
-function toggleBurgerMNU () {
-  // Toggle state of burger/cross button and burger menu when clicked
-  burger.classList.toggle('cross-btn');
-  burgerMNU.classList.toggle('burger-menu-drive-in');
-  toggleBackgroundLock();
-}
-
 function checkWinWidth () {
-  sliderInvisibleWidth = sliderWidth - content.clientWidth + 16;
+  windowWidth = window.innerWidth;
   // Adjust behavior depending on screen width
-  if(window.innerWidth <= 768 && !burgerMNU_ON) {
+  if(windowWidth <= 768 && !burgerMNU_ON) {
     sliderStrokes = 6;
     burgerMNU.style.display = 'flex';
     burger.style.display = 'flex';
     burgerMNU_ON = true;
-  } else if (window.innerWidth > 768 && burgerMNU_ON) {
+  } else if (windowWidth > 768 && burgerMNU_ON) {
     sliderStrokes = 3;
     toggleBackgroundLock();  
     burgerMNU.style.display = 'none';
@@ -74,22 +55,17 @@ function checkWinWidth () {
     burgerMNU_ON = false;
     burger.classList.remove('cross-btn');
     burgerMNU.classList.remove('burger-menu-drive-in');
+  } 
+  if (windowWidth <= 1290) {
+    sliderPadding = 16;
+  } else {
+    sliderPadding = windowWidth - 1276;
   }
+  sliderInvisibleWidth = sliderWidth - content.clientWidth + sliderPadding;
   toggleSliderBTN(sliderLeftBTN, 'disable');
   toggleSliderBTN(sliderRightBTN, 'enable');
   sliderPosition = 0;
   slider.style.transform = `translateX(0)`
-}
-
-function toggleBackgroundLock() {
-  // Lock/unlock modal window background
-  if(!background_Locked) {
-    document.body.style.overflow = 'hidden';
-    background_Locked = true;
-  } else {
-    document.body.style.overflow = 'unset';
-    background_Locked = false;
-  }
 }
 
 function toggleSliderBTN(BTN, action) {
@@ -131,18 +107,21 @@ function showFourRandomGifts() {
     switch(gifts[giftSet[i]].category) {
       case 'For Work':
         cardImage.src = './assets/img/gift-for-work.png';
+        cardImage.setAttribute('alt', `${gifts[giftSet[i]].name} image`);
         cardCategory.innerText = 'for work';
         cardCategory.classList.add('txt-blue');
         cardName.innerText = gifts[giftSet[i]].name;
         break;
       case 'For Health':
         cardImage.src = './assets/img/gift-for-health.png';
+        cardImage.setAttribute('alt', `${gifts[giftSet[i]].name} image`);
         cardCategory.innerText = 'for health';
         cardCategory.classList.add('txt-green');
         cardName.innerText = gifts[giftSet[i]].name;
         break;
       case 'For Harmony':
         cardImage.src = './assets/img/gift-for-harmony.png';
+        cardImage.setAttribute('alt', `${gifts[giftSet[i]].name} image`);
         cardCategory.innerText = 'for harmony';
         cardCategory.classList.add('txt-purple');
         cardName.innerText = gifts[giftSet[i]].name;

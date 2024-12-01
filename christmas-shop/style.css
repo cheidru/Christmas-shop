@@ -71,6 +71,15 @@ h4 {
   letter-spacing: 0.6px;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #FF4646;
+}
+
 header {
   position: relative;
   width: 1440px;
@@ -624,7 +633,7 @@ footer {
 #gifts {
   box-sizing: border-box;
   width: 1440px;
-  height: 1394px;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -666,14 +675,14 @@ footer {
   transition: all 0.5s;
 }
 
-#gift-tab-selected {
+#gift-tabs .selected {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
 #gift-cards {
+  height: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
   gap: 12px;
 }
 
@@ -694,10 +703,6 @@ footer {
     fill: #FFFFFF;
     stroke: #FF4646;
   }
-  /* .right-button:hover {
-    fill: #FFFFFF;
-    stroke: #FF4646;
-  } */
 
   .best-gift-card:hover .best-gift-card-descr-text {
     color: #FF4646;
@@ -727,16 +732,6 @@ footer {
     max-width: 100%;
     width: 100%;
   }
-
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 20px;
-    overflow: hidden;
-    background-color: #FF4646;
-  }
-
 
   main, body, header, section, footer, #gifts {
     box-sizing: border-box;
