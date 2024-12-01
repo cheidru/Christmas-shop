@@ -1,11 +1,18 @@
 const giftCategoryMNU = document.getElementById('gift-tabs');
 const cardContainer = document.getElementById('gift-cards');
+const scrollToTop = document.getElementById('scroll-to-top-btn');
+
 let activeTab = document.getElementById('all-tab');
 let windowWidth = 1440;
+let windowScroll = 0;
 
 
 checkWinWidth();
 addGiftCards('all');
+checkWinScroll();
+
+window.addEventListener('resize', checkWinWidth);
+window.addEventListener('scroll', checkWinScroll);
 
 giftCategoryMNU.addEventListener('click', (event) => {
   activeTab.classList.remove('selected');
@@ -14,7 +21,9 @@ giftCategoryMNU.addEventListener('click', (event) => {
   addGiftCards(event.target.textContent);
 })
 
-function checkWinWidth () {
+scrollToTop.addEventListener('click', () => {window.scrollTo(0, 0)})
+
+function checkWinWidth() {
   windowWidth = window.innerWidth;
   // Adjust behavior depending on screen width
   if(windowWidth <= 768 && !burgerMNU_ON) {
@@ -29,6 +38,14 @@ function checkWinWidth () {
     burger.classList.remove('cross-btn');
     burgerMNU.classList.remove('burger-menu-drive-in');
   } 
+}
+
+function checkWinScroll() {
+  if(window.scrollY <= 300) {
+    scrollToTop.style.visibility = 'hidden';
+  } else {
+    scrollToTop.style.visibility = 'visible';
+  }
 }
 
 function addGiftCards(category) {

@@ -21,7 +21,7 @@ checkWinWidth();
 showFourRandomGifts();
 setInterval(ctaTimer, 1000);
 
-window.addEventListener('resize', checkWinWidth)
+window.addEventListener('resize', checkWinWidth);
 
 sliderLeftBTN.addEventListener('click', () => {
   if(!sliderLeftBTN.BTN_ON) return;
