@@ -7,6 +7,9 @@ const minutes = document.getElementById('cta-timer-minutes');
 const seconds = document.getElementById('cta-timer-seconds');
 const newYearTimeStamp = new Date(2025, 0, 1);
 
+const cardContainer = document.getElementById('best-gifts-container');
+
+
 sliderLeftBTN.BTN_ON = false;
 sliderRightBTN.BTN_ON = true;
 let windowWidth = 1440;
@@ -37,6 +40,16 @@ sliderRightBTN.addEventListener('click', () => {
   if(sliderPosition === sliderStrokes) toggleSliderBTN(sliderRightBTN, 'disable');
   if(sliderPosition === 1) toggleSliderBTN(sliderLeftBTN, 'enable');
   slider.style.transform = `translateX(-${(sliderInvisibleWidth / (sliderStrokes)) * sliderPosition}px)`;  
+})
+
+cardContainer.addEventListener('click', (event) => {
+  let key;
+  if(event.target.parentElement.classList.contains('best-gift-card')) {
+    key = event.target.parentElement.getAttribute('key');
+  } else {
+    key = event.target.parentElement.parentElement.getAttribute('key');
+  }
+  if(key) showModal(key);
 })
 
 function checkWinWidth () {
@@ -127,5 +140,6 @@ function showFourRandomGifts() {
         cardName.innerText = gifts[giftSet[i]].name;
         break;
     }
+    cards[i].setAttribute('key', `${giftSet[i]}`);
   }
 }

@@ -21,6 +21,16 @@ giftCategoryMNU.addEventListener('click', (event) => {
   addGiftCards(event.target.textContent);
 })
 
+cardContainer.addEventListener('click', (event) => {
+  let key;
+  if(event.target.parentElement.classList.contains('best-gift-card')) {
+    key = event.target.parentElement.getAttribute('key');
+  } else {
+    key = event.target.parentElement.parentElement.getAttribute('key');
+  }
+  if(key) showModal(key);
+})
+
 scrollToTop.addEventListener('click', () => {window.scrollTo(0, 0)})
 
 function checkWinWidth() {
@@ -49,6 +59,7 @@ function checkWinScroll() {
 }
 
 function addGiftCards(category) {
+  let key = 0;
   let cards = [];
   switch(category) {
     case 'all':
@@ -104,6 +115,7 @@ function addGiftCards(category) {
         cardCategory.innerText = 'for health';
         cardCategory.classList.add('txt-green');
         cardName.innerText = cards[i].name;
+        if(category !== 'all') key = 12;
         break;
       case 'For Harmony':
         cardIMG.src = '../assets/img/gift-for-harmony.png';
@@ -111,7 +123,9 @@ function addGiftCards(category) {
         cardCategory.innerText = 'for harmony';
         cardCategory.classList.add('txt-purple');
         cardName.innerText = cards[i].name;
+        if(category !== 'all') key = 24;
         break;
     }
+    cardDIV.setAttribute('key', `${key + i}`);
   }
 }
