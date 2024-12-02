@@ -30,11 +30,90 @@ body {
 }
 
 #modal {
+  box-sizing: border-box;
+  position: fixed;
+  top: 50%;
+  left: 50vw;
+  width: 400px;
+  height: fit-content;
   display: none;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+#modal-img-container {
+  width: 100%;
+  height: 230px;
+}
+
+#modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #ECF3F8;
+}
+
+#modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  background-image: url(./assets/img/close.png);
+  cursor: pointer;
+}
+
+#modal-descr-container {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+#modal-card-descr-container, #modal-power-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#modal-power-table {
+  display: grid;
+  grid-template-columns: 50% 1fr 1fr;
+  column-gap: 12px;
+}
+
+.snowflakes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.flake, .no-flake {
+  width: 16px;
+  height: 16px;
+  background-image: url(./assets/svg/snowflake.svg);
+  background-size: contain;
+}
+
+.no-flake {
+  opacity: 0.1;
 }
 
 #overlay {
   display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color:rgba(24, 28, 41, 0.80);
+  z-index: 2;
 }
 
 #content-wrapper {
@@ -945,6 +1024,10 @@ footer {
 
   #burger-menu {
     padding: 242px 0;
+  }
+
+  #modal {
+    width: 364px;
   }
 
   #hero {
