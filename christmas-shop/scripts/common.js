@@ -59,6 +59,7 @@ function showModal(cardNumber) {
   toggleModalBackgroundLock();
   modalName.innerText = gifts[cardNumber].name;
   modalCategory.innerText = gifts[cardNumber].category;
+  modalCategory.className = '';
   modalCategory.classList.add(categoryAttribute(gifts[cardNumber].category).color);
   modalIMG.src = categoryAttribute(gifts[cardNumber].category).src;
   modalText.innerText = gifts[cardNumber].description;
