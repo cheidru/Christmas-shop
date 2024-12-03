@@ -41,7 +41,7 @@ function checkWinWidth() {
     burger.style.display = 'flex';
     burgerMNU_ON = true;
   } else if (windowWidth > 768 && burgerMNU_ON) {
-    toggleBackgroundLock();  
+    toggleBurgerBackgroundLock();  
     burgerMNU.style.display = 'none';
     burger.style.display = 'none';
     burgerMNU_ON = false;
@@ -128,4 +128,13 @@ function addGiftCards(category) {
     }
     cardDIV.setAttribute('key', `${key + i}`);
   }
+}
+
+function categoryAttribute(category) {
+  const categories = {
+    'For Work': { src: '../assets/img/gift-for-work.png', color: 'txt-blue'},
+    'For Health': { src: '../assets/img/gift-for-health.png', color: 'txt-green'},
+    'For Harmony': { src: '../assets/img/gift-for-harmony.png', color: 'txt-purple'}
+  }
+  return categories[category]
 }
