@@ -62,7 +62,7 @@ function checkWinWidth () {
     burgerMNU_ON = true;
   } else if (windowWidth > 768 && burgerMNU_ON) {
     sliderStrokes = 3;
-    toggleBackgroundLock();  
+    toggleBurgerBackgroundLock();  
     burgerMNU.style.display = 'none';
     burger.style.display = 'none';
     burgerMNU_ON = false;
