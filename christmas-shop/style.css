@@ -334,6 +334,22 @@ a {
   cursor: pointer;
 }
 
+#burger-menu-item-active {  
+  box-sizing: border-box;
+  height: 60px;
+  padding: 12px 20px;
+  line-height: 152%;
+  text-align: center;
+  font-family: MontserratBold;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 3.8px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  background-color:rgba(255, 70, 70, 0.1);
+  color: #FF4646;
+}
+
 section, footer {
   box-sizing: border-box;
   width: 1440px;
