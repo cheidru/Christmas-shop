@@ -5,10 +5,10 @@ const days = document.getElementById('cta-timer-days');
 const hours = document.getElementById('cta-timer-hours');
 const minutes = document.getElementById('cta-timer-minutes');
 const seconds = document.getElementById('cta-timer-seconds');
-const newYearTimeStamp = new Date(2025, 0, 1);
+
+const newYearTimeUTCStamp = new Date(Date.UTC(2025, 0, 1));
 
 const cardContainer = document.getElementById('best-gifts-container');
-
 
 sliderLeftBTN.BTN_ON = false;
 sliderRightBTN.BTN_ON = true;
@@ -92,13 +92,13 @@ function toggleSliderBTN(BTN, action) {
 }
 
 function ctaTimer() {
-  // new Date(year, month, date, hours, minutes, seconds, ms)
-  const timeStampNow = new Date();
-  const timeLeft = newYearTimeStamp - timeStampNow;
-  const daysLeft = Math.floor(timeLeft / ( 60 * 60 * 24 * 1000));
-  const hoursLeft = Math.floor((timeLeft % ( 60 * 60 * 24 * 1000)) / ( 60 * 60 * 1000));
-  const minutesLeft = Math.floor((timeLeft % ( 60 * 60 * 1000)) / ( 60 * 1000));
-  const secondsLeft = Math.floor((timeLeft % ( 60 * 1000)) / 1000);
+  const timeStampNow = new Date();  
+  const timeUTCLeft = newYearTimeUTCStamp - timeStampNow;
+
+  const daysLeft = Math.floor(timeUTCLeft / ( 60 * 60 * 24 * 1000));
+  const hoursLeft = Math.floor((timeUTCLeft % ( 60 * 60 * 24 * 1000)) / ( 60 * 60 * 1000));
+  const minutesLeft = Math.floor((timeUTCLeft % ( 60 * 60 * 1000)) / ( 60 * 1000));
+  const secondsLeft = Math.floor((timeUTCLeft % ( 60 * 1000)) / 1000);
   days.innerText = daysLeft;
   hours.innerText = hoursLeft;
   minutes.innerText = minutesLeft;
