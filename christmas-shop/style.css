@@ -301,7 +301,7 @@ a {
   left: 0;
   width: 100%;
   height: 100vh;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   background-color: #FFFFFF;
   transition: all  0.5s;
@@ -315,6 +315,7 @@ a {
 
 #burger-menu {
   display: flex;
+  height: 960px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -961,11 +962,6 @@ footer {
     visibility: visible;
   }
 
-  
-  #burger-menu {
-    padding: 348px 0;
-  }
-
   #menu {
     display: none;
   }
@@ -1042,14 +1038,13 @@ footer {
   }
 }
 
-
 @media (max-width: 380px) {
   #burger-menu-container {
-    height: 748px;
+    height: 100vh;
   }
 
   #burger-menu {
-    padding: 242px 0;
+    height: 748px;
   }
 
   #modal {
