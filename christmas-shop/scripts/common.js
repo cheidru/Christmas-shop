@@ -53,7 +53,6 @@ function toggleModalBackgroundLock() {
 }
 
 function showModal(cardNumber) {
-  console.log('showModal enabled, ', 'cardNumber = ', cardNumber);
   overlay.style.display = 'block';
   modal.style.display = 'flex';
   toggleModalBackgroundLock();
