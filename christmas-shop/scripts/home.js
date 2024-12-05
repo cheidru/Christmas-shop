@@ -6,7 +6,9 @@ const hours = document.getElementById('cta-timer-hours');
 const minutes = document.getElementById('cta-timer-minutes');
 const seconds = document.getElementById('cta-timer-seconds');
 
-const newYearTimeUTCStamp = new Date(Date.UTC(2025, 0, 1));
+const currentDate = new Date();
+const currentUTCDate = new Date(currentDate.toISOString());
+const newYearTimeUTCStamp = new Date(Date.UTC(currentUTCDate.getFullYear() +1, 0, 1));
 
 const cardContainer = document.getElementById('best-gifts-container');
 
@@ -71,9 +73,12 @@ function checkWinWidth () {
   } 
   if (windowWidth <= 1290) {
     sliderPadding = 16;
-  } else {
+  } else if (windowWidth <= 1440) {
     sliderPadding = windowWidth - 1276;
+  } else {
+    sliderPadding = 164;
   }
+
   sliderInvisibleWidth = sliderWidth - content.clientWidth + sliderPadding;
   toggleSliderBTN(sliderLeftBTN, 'disable');
   toggleSliderBTN(sliderRightBTN, 'enable');
