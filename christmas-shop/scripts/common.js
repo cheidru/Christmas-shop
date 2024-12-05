@@ -68,8 +68,8 @@ function showModal(cardNumber) {
   dreamPower.innerText = gifts[cardNumber].superpowers.dream;  
   addFlakes(livePower.innerText, createPower.innerText, lovePower.innerText, dreamPower.innerText)
 
-  overlay.addEventListener('click', closeModal, true);
-  closeBTN.addEventListener('click', closeModal, true);
+  overlay.addEventListener('click', closeModal, {once: true});
+  closeBTN.addEventListener('click', closeModal, {once: true});
 }
 
 function closeModal() {
