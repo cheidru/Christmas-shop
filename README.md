@@ -1,3 +1,3 @@
-# This is [RS School](https://rs.school/) JavaScript/Front-end (JSFE2024Q4) Course Project
+## This is [RS School](https://rs.school/) JavaScript/Front-end (JSFE2024Q4) Course Project
 
-### [Christmas-shop]()
+## [Christmas-shop](https://cheidru.github.io/Christmas-shop/christmas-shop/)
